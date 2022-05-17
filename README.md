@@ -8,9 +8,9 @@ This is the README for extension `KECC-IR-HIGHLIGHT`.
 
 Support for language highlighting of KECC(KAIST Educational C Compiler) IR. So the theme you use is applied automatically to the `.ir` file. It does not contain themes.
 
-![Example-VSCode Default Dark](./imgs/img1.png)
+![Example-VSCode Default Dark](imgs/img1.png)
 
-![Example-Atom One Dark](./imgs/img2.png)
+![Example-Atom One Dark](imgs/img2.png)
 
 ## Requirements
 
