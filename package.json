@@ -1,0 +1,34 @@
+{
+    "name": "kecc-ir-highlight",
+    "displayName": "KECC IR Highlight",
+    "description": "Support for language highlighting of KECC(KAIST Educational C Compiler) IR",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "ir",
+                "aliases": [
+                    "KECC IR",
+                    "ir"
+                ],
+                "extensions": [
+                    ".ir"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ir",
+                "scopeName": "source.keccir",
+                "path": "./syntaxes/ir.tmLanguage.json"
+            }
+        ]
+    }
+}

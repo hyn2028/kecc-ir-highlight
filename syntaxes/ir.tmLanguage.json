@@ -1,0 +1,90 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "KECC IR",
+	"patterns": [
+		{
+			"include": "#array_types"
+		},
+		{
+			"include": "#normal"
+		}
+	],
+	"repository": {
+		"array_types": {
+			"_comment": "array types and its pointers",
+			"begin": "\\[",
+			"end": "\\]\\**",
+			"name": "entity.name.class",
+			"patterns": [
+				{
+					"include": "#array_types"
+				}
+			]
+		},
+		"normal": {
+			"patterns": [
+				{
+					"_comment": "primitive types and its pointers",
+					"name": "entity.name.class",
+					"match": "(i8|i16|i32|i64|u1|u8|u16|u32|u64|f32|f64|unit)\\**"
+				},
+				{
+					"_comment": "struct and its pointers",
+					"name": "entity.name.class",
+					"match": "struct .+?(?=:|,| |$)"
+				},
+				{
+					"_comment": "keywords",
+					"name": "keyword.ir",
+					"match": "\\b(fun|init|block|bid|allocations|var)\\b"
+				},
+				{
+					"_comment": "instructions",
+					"name": "keyword.control.ir",
+					"match": "(?<=\\s|^)(nop|store|call|load|typecast|to|getelementptr|offset|cmp|ret|mul|div|mod|add|sub|shl|shr|eq|ne|lt|le|gt|ge|and|xor|or|plus|minus|negate|j|br|switch|default)(?=\\s)"
+				},
+				{
+					"_comment": "temporary registers",
+					"name": "entity.name.variable.ir",
+					"match": "\\%b[0-9]+?:i[0-9]+?(?=:)"
+				},
+				{
+					"_comment": "phinode registers",
+					"name": "entity.name.variable.ir",
+					"match": "\\%b[0-9]+?:p[0-9]+?(?=:)"
+				},
+				{
+					"_comment": "local variable registers",
+					"name": "entity.name.variable.ir",
+					"match": "\\%l[0-9]+?(?=:)"
+				},
+				{
+					"_comment": "function names as operand",
+					"name": "entity.name.function.ir",
+					"match": "(?<=\\s|^)(@.*?)(?=:)"
+				},
+				{
+					"_comment": "function names as function definition",
+					"name": "entity.name.function.ir",
+					"match": "(?<=\\s|^)(@.*?)(?=\\s)"
+				},
+				{
+					"_comment": "block ids",
+					"name": "entity.name.function.ir",
+					"match": "(?<=\\s|^)(b[0-9\\.]+)"
+				},
+				{
+					"_comment": "constants-numeric",
+					"name": "constant.numeric.ir",
+					"match": "([0-9\\.]+?)(?=:|$)"
+				},
+				{
+					"_comment": "constant-undef",
+					"name": "constant.numeric.ir",
+					"match": "(undef)(?=:)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.keccir"
+}
