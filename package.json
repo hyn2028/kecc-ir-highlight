@@ -2,7 +2,7 @@
     "name": "kecc-ir-highlight",
     "displayName": "KECC IR Highlight",
     "description": "Support for language highlighting of KECC(KAIST Educational C Compiler) IR",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "repository": "https://github.com/hyn2028/kecc-ir-highlight",
     "icon": "imgs/icon.png",
     "publisher": "hyn2028",

@@ -32,6 +32,10 @@ If you find any other issues or have a solution, please feel free to contact us.
 
 Users appreciate release notes as you update your extension.
 
+### 1.0.1
+
+Fixed numeric constant recognition bug.
+
 ### 1.0.0
 
 Initial release.

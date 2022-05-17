@@ -76,7 +76,7 @@
 				{
 					"_comment": "constants-numeric",
 					"name": "constant.numeric.ir",
-					"match": "([0-9\\.]+?)(?=:|$)"
+					"match": "\\b([0-9\\.]+?)(?=:|$)"
 				},
 				{
 					"_comment": "constant-undef",
